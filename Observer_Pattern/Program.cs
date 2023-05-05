@@ -6,6 +6,7 @@ Salary salary = new Salary();
 
 new ManagerBonus(salary);
 new EmployeeBonus(salary);
+new DierctorBonus(salary);
 
 salary.Val = 230000;
 
@@ -40,6 +41,7 @@ class Salary
         {
             ob.update();
         }
+        Console.WriteLine("This is how things happpend");
     }
 }
 
@@ -47,6 +49,20 @@ abstract class Observer
 {
     protected Salary sal;
     public abstract void update();
+}
+
+class EmployeeBonus : Observer
+{
+    public EmployeeBonus(Salary sal)
+    {
+        this.sal = sal;
+        this.sal.attach(this);
+    }
+
+    public override void update()
+    {
+        Console.WriteLine("Employee Bonus is " + (sal.Val * 2));
+    }
 }
 
 class  ManagerBonus : Observer
@@ -63,9 +79,9 @@ class  ManagerBonus : Observer
     }
 }
 
-class EmployeeBonus : Observer
+class DierctorBonus : Observer
 {
-    public EmployeeBonus(Salary sal)
+    public DierctorBonus(Salary sal)
     {
         this.sal = sal;
         this.sal.attach(this);
@@ -73,6 +89,7 @@ class EmployeeBonus : Observer
 
     public override void update()
     {
-        Console.WriteLine("Employee Bonus is " + (sal.Val * 2));
+        Console.WriteLine("Dierctor Bonus is " + (sal.Val * 5));
     }
 }
+
