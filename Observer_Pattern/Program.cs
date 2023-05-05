@@ -61,7 +61,9 @@ class EmployeeBonus : Observer
 
     public override void update()
     {
-        Console.WriteLine("Employee Bonus is " + (sal.Val * 2));
+        //string.Format("{0:D}", date1);
+        //Console.WriteLine("Employee Bonus is " + (sal.Val * 2));
+        Console.WriteLine("Employee Bonus is " + string.Format("{0:###,###.00}", (sal.Val * 2)));
     }
 }
 
@@ -75,7 +77,7 @@ class  ManagerBonus : Observer
 
     public override void update()
     {
-        Console.WriteLine("Manager Bonus is " + (sal.Val * 3));
+        Console.WriteLine("Manager Bonus is " + string.Format("{0:###,###.00}", (sal.Val * 3)));
     }
 }
 
@@ -89,7 +91,7 @@ class DierctorBonus : Observer
 
     public override void update()
     {
-        Console.WriteLine("Dierctor Bonus is " + (sal.Val * 5));
+        Console.WriteLine("Dierctor Bonus is " + string.Format("{0:###,###.00}", (sal.Val * 5)));
     }
 }
 
