@@ -61,8 +61,6 @@ class EmployeeBonus : Observer
 
     public override void update()
     {
-        //string.Format("{0:D}", date1);
-        //Console.WriteLine("Employee Bonus is " + (sal.Val * 2));
         Console.WriteLine("Employee Bonus is " + string.Format("{0:###,###.00}", (sal.Val * 2)));
     }
 }
