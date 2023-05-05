@@ -7,7 +7,7 @@ Salary salary = new Salary();
 new ManagerBonus(salary);
 new EmployeeBonus(salary);
 
-salary.Val = 3000;
+salary.Val = 230000;
 
 Console.ReadLine();
 
